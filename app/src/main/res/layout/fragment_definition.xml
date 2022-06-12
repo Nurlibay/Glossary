@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/app_main_color"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginVertical="@dimen/margin_middle"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="@dimen/margin_middle"
+                android:src="@drawable/ic_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_standard"
+                android:gravity="start"
+                android:text="@string/definition"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_title"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/btnHome"
+                app:layout_constraintEnd_toStartOf="@id/imgStar"
+                app:layout_constraintStart_toEndOf="@id/btnHome"
+                app:layout_constraintTop_toTopOf="@id/btnHome"
+                tools:ignore="SpUsage" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgStar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_standard"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="@dimen/margin_middle"
+                android:src="@drawable/ic_star_not_full"
+                app:layout_constraintBottom_toBottomOf="@id/btnHome"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btnHome" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/app_bar_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_termin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_standard"
+            android:text="Абердин – ангусская порода"
+            android:textColor="@color/black"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/app_bar_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:gravity="start"
+            tools:ignore="HardcodedText,SpUsage" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_russian_mean"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:text="Русша мәниси"
+            android:textStyle="bold"
+            android:textColor="#A3000000"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_termin"
+            android:gravity="start"
+            tools:ignore="HardcodedText,SpUsage" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_russian_mean_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginEnd="@dimen/margin_standard"
+            android:layout_marginBottom="@dimen/margin_standard"
+            android:text="Английская порода крупного рогатого скота, мясного направления. Выведена в Шотландии. Масть черная"
+            android:textColor="#A3000000"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_russian_mean"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:gravity="start"
+            tools:ignore="HardcodedText,SpUsage" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_eng_mean"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:text="Инглизше мәниси"
+            android:textStyle="bold"
+            android:textColor="#A3000000"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_russian_mean_text"
+            android:gravity="start"
+            tools:ignore="HardcodedText,SpUsage" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_eng_mean_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginEnd="@dimen/margin_standard"
+            android:layout_marginBottom="@dimen/margin_standard"
+            android:text="English kind of cattle of meat direction. Revealed in Scotland. Black colour"
+            android:textColor="#A3000000"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_eng_mean"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:gravity="start"
+            tools:ignore="HardcodedText,SpUsage" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_qq_mean"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:text="Қарақалпақша мәниси"
+            android:textStyle="bold"
+            android:textColor="#A3000000"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_eng_mean_text"
+            android:gravity="start"
+            tools:ignore="HardcodedText,SpUsage" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_qq_mean_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginEnd="@dimen/margin_standard"
+            android:layout_marginBottom="@dimen/margin_standard"
+            android:textColor="#A3000000"
+            android:text="Гөш бағдарындағы ири шақлы маллардың англия породасы. Шотландияда шығарылған. Реңи қара."
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_qq_mean"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:gravity="start"
+            tools:ignore="HardcodedText,SpUsage" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

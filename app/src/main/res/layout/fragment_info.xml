@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/topAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/app_main_color"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:contentInsetStartWithNavigation="0dp"
+            app:layout_collapseMode="pin"
+            app:theme="@style/ThemeOverlay.AppCompat"
+            app:title="@string/about"
+            app:titleTextColor="@color/white" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/item_author"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/topAppBar"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_term"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/navigate_icon_auhtor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@string/author"
+            android:gravity="start"
+            android:singleLine="true"
+            android:background="@color/white"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:padding="@dimen/margin_standard"
+            android:ellipsize="end"
+            android:maxLines="1"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/navigate_icon_auhtor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_term"
+            app:srcCompat="@drawable/icon_navigate_next"
+            android:padding="@dimen/margin_standard"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/item_abbreviation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/item_author"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_abbreviation"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/navigate_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@string/abbreviation"
+            android:gravity="start"
+            android:singleLine="true"
+            android:background="@color/white"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:padding="@dimen/margin_standard"
+            android:ellipsize="end"
+            android:maxLines="1"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/navigate_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_abbreviation"
+            app:srcCompat="@drawable/icon_navigate_next"
+            android:padding="@dimen/margin_standard"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/app_main_color"
+        app:layout_constraintTop_toBottomOf="@id/item_author"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/app_main_color"
+        app:layout_constraintTop_toBottomOf="@id/item_abbreviation"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/margin_middle"
+        app:layout_constraintTop_toBottomOf="@id/item_abbreviation">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_program_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_middle"
+                android:text="@string/program_info"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                tools:ignore="SpUsage" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_middle"
+                android:layout_marginHorizontal="@dimen/margin_middle"
+                android:text="@string/info_app"
+                android:textSize="20dp"
+                android:gravity="center"
+                tools:ignore="SpUsage" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

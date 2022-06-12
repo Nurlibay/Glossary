@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/glossaryFragment">
+
+    <fragment
+        android:id="@+id/glossaryFragment"
+        android:name="uz.texnopos.glossary.presenter.glossary.GlossaryFragment"
+        android:label="GlossaryFragment"
+        tools:layout="@layout/fragment_glossary"
+        >
+        <action
+            android:id="@+id/action_glossaryFragment_to_definitionFragment"
+            app:destination="@id/definitionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/definitionFragment"
+        android:name="uz.texnopos.glossary.presenter.glossary.definition.DefinitionFragment"
+        android:label="DefinitionFragment"
+        tools:layout="@layout/fragment_definition"
+        >
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="term"
+            app:argType="string"
+            android:defaultValue='""' />
+        <argument
+            android:name="russian_mean"
+            app:argType="string"
+            android:defaultValue='""' />
+        <argument
+            android:name="eng_mean"
+            app:argType="string"
+            android:defaultValue='""' />
+        <argument
+            android:name="qq_mean"
+            app:argType="string"
+            android:defaultValue='""' />
+        <argument
+            android:name="status"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/favouriteFragment"
+        android:name="uz.texnopos.glossary.presenter.favourite.FavouriteFragment"
+        android:label="FavouriteFragment"
+        tools:layout="@layout/fragment_bookmark"
+        >
+        <action
+            android:id="@+id/action_favouriteFragment_to_definitionFragment"
+            app:destination="@id/definitionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="uz.texnopos.glossary.presenter.info.InfoFragment"
+        android:label="InfoFragment"
+        tools:layout="@layout/fragment_info"
+        >
+        <action
+            android:id="@+id/action_infoFragment_to_abbreviationFragment"
+            app:destination="@id/abbreviationFragment" />
+        <action
+            android:id="@+id/action_infoFragment_to_authorFragment"
+            app:destination="@id/authorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/abbreviationFragment"
+        android:name="uz.texnopos.glossary.presenter.info.AbbreviationFragment"
+        android:label="AbbreviationFragment" />
+    <fragment
+        android:id="@+id/authorFragment"
+        android:name="uz.texnopos.glossary.presenter.info.AuthorFragment"
+        android:label="AuthorFragment" />
+
+</navigation>
